@@ -24,19 +24,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #D9D9D9;
+            background-color: #D9D9D9; /* Light grey background */
             padding: 1rem 5%;
-            color: white;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .navbar .logo {
-            font-size: 1.25rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
         }
 
         .nav-links {
@@ -46,21 +43,22 @@
         }
 
         .nav-links li a {
-            color: black;
+            color: #1a1a1a; /* Dark text so it is readable on grey */
             text-decoration: none;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .nav-links li a:hover {
-            color: #4A90E2;
+            color: #2b60de;
         }
 
         /* Hero Section (Blue Banner) */
         .hero {
-            background-color: #2b60de; /* Royal blue to match your design */
+            background-color: #2b60de; /* Royal blue */
             color: white;
             padding: 6rem 5%;
             text-align: center;
@@ -81,8 +79,39 @@
             padding: 4rem 5%;
         }
 
-        section {
+        /* Side-by-Side Layout Wrapper */
+        .main-content-layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
             margin-bottom: 4rem;
+        }
+
+        .layout-left {
+            flex: 1; 
+            position: sticky;
+            top: 100px; /* Keeps image pinned relative to screen while scrolling */
+        }
+
+        .layout-right {
+            flex: 1.5; /* Gives slightly more horizontal room to text column */
+        }
+
+        /* Responsive Feature Image Styles */
+        .lab-feature-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: block;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
         }
 
         h2 {
@@ -98,20 +127,6 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             color: #444;
-        }
-
-        /* Image Placeholder Box */
-        .image-placeholder {
-            background-color: #e0e0e0;
-            width: 100%;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
         }
 
         /* Research Goals Grid */
@@ -163,6 +178,14 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            /* Drops image above text on mobile devices */
+            .main-content-layout {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .layout-left, .layout-right {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -170,15 +193,15 @@
 
     <nav class="navbar">
         <div class="logo">
-    <img src="logo.svg" alt="The Roche Lab Logo" style="height: 45px; width: auto;">
-</div>
+            <img src="logo.svg" alt="The Roche Lab Logo" style="height: 45px; width: auto;">
+        </div>
         <ul class="nav-links">
-           <li><a href="index.html">Home</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="people.html">People</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="publication.html">Publications</a></li>
-    <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="publication.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -188,24 +211,29 @@
 
     <main class="container">
         
-        <section id="about">
-            <h2>About Our Lab</h2>
-            <p>Our lab studies the molecular mechanisms driving synaptic development and plasticity. We focus on synaptic proteins and their role in neurodegenerative diseases.</p>
-        </section>
-
-        <section id="research-focus">
-            <h2>Research Focus</h2>
-            <p>How are synaptic proteins organized to build functional neural circuits, and how do changes in these proteins lead to progressive neuronal dysfunction?</p>
+        <div class="main-content-layout">
             
-            <p>To answer these questions, The Roche Lab uses the <em>Drosophila</em> neuromuscular junction to dissect protein function in vivo. This synapse is genetically tractable and shares key features with glutamatergic synapses in the central nervous system, making it a powerful model for studying synaptic biology.</p>
-            
-            <p>We use an integrated approach combining forward and reverse genetics, immunohistochemistry, electrophysiology, and live and fixed imaging to study how synaptic proteins regulate synapse formation, function, and remodeling. Through this work, we aim to understand synaptic protein dysfunctions and how they contribute to neurodegenerative diseases.</p>
-
-            <div class="image-placeholder">
-                [have image here]
+            <div class="layout-left">
+                <img src="image set.jpg" alt="The Roche Lab Research Data" class="lab-feature-image">
             </div>
-        </section>
+            
+            <div class="layout-right">
+                <section id="about">
+                    <h2>About Our Lab</h2>
+                    <p>Our lab studies the molecular mechanisms driving synaptic development and plasticity. We focus on synaptic proteins and their role in neurodegenerative diseases.</p>
+                </section>
 
+                <section id="research-focus">
+                    <h2>Research Focus</h2>
+                    <p>How are synaptic proteins organized to build functional neural circuits, and how do changes in these proteins lead to progressive neuronal dysfunction?</p>
+                    
+                    <p>To answer these questions, The Roche Lab uses the <em>Drosophila</em> neuromuscular junction to dissect protein function in vivo. This synapse is genetically tractable and shares key features with glutamatergic synapses in the central nervous system, making it a powerful model for studying synaptic biology.</p>
+                    
+                    <p>We use an integrated approach combining forward and reverse genetics, immunohistochemistry, electrophysiology, and live and fixed imaging to study how synaptic proteins regulate synapse formation, function, and remodeling. Through this work, we aim to understand synaptic protein dysfunctions and how they contribute to neurodegenerative diseases.</p>
+                </section>
+            </div>
+
+        </div>
         <section id="research-goals">
             <h2>Research Goals</h2>
             
