@@ -45,7 +45,7 @@ header h1 {
 
 nav {
     background-color: #D9D9D9; /* Darker blue for nav bar */
-    padding: 15px;
+    padding: 1rem 5%; /* This ensures the spacing is perfectly equal on all sides */
     text-align: center;
 }
 
