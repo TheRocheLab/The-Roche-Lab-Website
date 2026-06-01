@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events | The Roche Lab</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e6e6e6; /* Light grey matching your top banner */
+            padding: 1.5rem 5%;
+            color: #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Exact Logo Styling based on screenshot */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #1a1a1a;
+        }
+
+        .logo-main {
+            font-size: 3rem;
+            font-weight: 900; /* Extra bold */
+            line-height: 0.8;
+            letter-spacing: -2px; /* Tightly kerned letters */
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        /* Desktop Navigation Links (Hidden in your mobile view, but needed for desktop) */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #2b60de;
+        }
+
+        /* Hero Section (Blue Banner) */
+        .hero {
+            background-color: #2b60de; /* Royal blue matching your design */
+            color: white;
+            padding: 4rem 5% 6rem 5%;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Main Content area to push footer down */
+        main {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* White Spacer Block */
+        .white-spacer {
+            background-color: #ffffff;
+            height: 80px; /* Represents the white band between blue and beige */
+            width: 100%;
+        }
+
+        /* Coming Soon Section (Beige Background) */
+        .coming-soon {
+            background-color: #f0f0e6; /* Beige/light green color from your design */
+            padding: 6rem 5%;
+            flex-grow: 1; /* Fills remaining space */
+            display: flex;
+            justify-content: flex-end; /* Aligns text to the right as seen in screenshot */
+            align-items: center;
+        }
+
+        .coming-soon h2 {
+            font-size: 3.5rem;
+            font-weight: 400; /* Matching the thinner serif/roman look of the cut-off text */
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: "Times New Roman", Times, serif; /* Using a serif font for the COMING SOON text */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness (matching the vertical stacking in your screenshot) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                display: none; /* Hides desktop links to mimic mobile view; you'd add a hamburger menu here later */
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .coming-soon h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-main">TRL</span>
+            <span class="logo-sub">THE ROCHE LAB</span>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>News & Events</h1>
+        <p>Stay updated with the latest news, achievements and upcoming events from The Roche Lab</p>
+    </header>
+
+    <main>
+        <div class="white-spacer"></div>
+
+        <section class="coming-soon">
+            <h2>COMING SOON</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Roche Lab. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

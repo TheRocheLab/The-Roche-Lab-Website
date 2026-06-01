@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Roche Lab</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 1rem 5%;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #4A90E2;
+        }
+
+        /* Hero Section (Blue Banner) */
+        .hero {
+            background-color: #2b60de; /* Royal blue to match your design */
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Layout constraints */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #2b60de;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        /* Image Placeholder Box */
+        .image-placeholder {
+            background-color: #e0e0e0;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Research Goals Grid */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .goal-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid #2b60de;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .goal-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .goal-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">The Roche Lab</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>Welcome to The Roche Lab</h1>
+    </header>
+
+    <main class="container">
+        
+        <section id="about">
+            <h2>About Our Lab</h2>
+            <p>Our lab studies the molecular mechanisms driving synaptic development and plasticity. We focus on synaptic proteins and their role in neurodegenerative diseases.</p>
+        </section>
+
+        <section id="research-focus">
+            <h2>Research Focus</h2>
+            <p>How are synaptic proteins organized to build functional neural circuits, and how do changes in these proteins lead to progressive neuronal dysfunction?</p>
+            
+            <p>To answer these questions, The Roche Lab uses the <em>Drosophila</em> neuromuscular junction to dissect protein function in vivo. This synapse is genetically tractable and shares key features with glutamatergic synapses in the central nervous system, making it a powerful model for studying synaptic biology.</p>
+            
+            <p>We use an integrated approach combining forward and reverse genetics, immunohistochemistry, electrophysiology, and live and fixed imaging to study how synaptic proteins regulate synapse formation, function, and remodeling. Through this work, we aim to understand synaptic protein dysfunctions and how they contribute to neurodegenerative diseases.</p>
+
+            <div class="image-placeholder">
+                [have image here]
+            </div>
+        </section>
+
+        <section id="research-goals">
+            <h2>Research Goals</h2>
+            
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <h3>Protein Characterization</h3>
+                    <p>Identify and characterize synaptic protein involved in synapse development, function and plasticity.</p>
+                </div>
+                
+                <div class="goal-card">
+                    <h3>Interaction Networks</h3>
+                    <p>Map protein-protein interactions at the synapse to understand molecular mechanisms underlying synaptic function.</p>
+                </div>
+                
+                <div class="goal-card">
+                    <h3>Disease Mechanism</h3>
+                    <p>Investigate how disruptions in synaptic proteins affect synapse function, with the goal of linking these changes to neurodegenerative disease.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Roche Lab. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

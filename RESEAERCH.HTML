@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Research | The Roche Lab</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4f4; /* Light gray to match the TRL logo block in the screenshot */
+            padding: 1rem 5%;
+            color: #1a1a1a;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .navbar .logo span {
+            font-size: 0.8rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #2b60de;
+        }
+
+        /* Hero Section (Blue Banner) */
+        .hero {
+            background-color: #2b60de; /* Royal blue matching your design */
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Main Content Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-header {
+            font-size: 2rem;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background-color: #f8f9fa; /* Light gray box matching Figma */
+            padding: 2.5rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #2b60de;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .project-card p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .project-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            TRL
+            <span>The Roche Lab</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Our Research</h1>
+        <p>Exploring the molecular mechanisms of synaptic function through genetics, imaging, and electrophysiological approaches</p>
+    </header>
+
+    <main class="container">
+        
+        <h2 class="section-header">Current & Recent Projects</h2>
+
+        <div class="project-card">
+            <h3>Role of the exocyst complex in synaptic development and function</h3>
+            <p>We combine imaging techniques and electrophysiology to investigate how the exocyst complex regulates synaptic development and function at the Drosophila neuromuscular junction. We have isolated Sec15, a component of the exocyst complex involved in targeted vesicle exocytosis, and found that loss of this protein leads to a range of developmental and functional deficits at the NMJ.</p>
+            <p>Many of these phenotypes have been previously characterized (Kang et al., 2024), and we remain interested in how this protein complex functions at neuronal synapses. In particular, we are currently focused on how the exocyst complex contributes to synaptic transmission.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Par1 kinase regulation of Dlg localization in synaptic development</h3>
+            <p>We investigate the interaction between Par1 kinase and Dlg, a scaffolding protein homologous to mammalian PSD-95, in neuronal development and function. These proteins were identified in a genetic screen for regulators of synapse development.</p>
+            <p>We are particularly interested in how Par1 kinase
