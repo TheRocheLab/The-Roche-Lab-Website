@@ -74,7 +74,7 @@
 
         /* Main Layout constraints */
         .container {
-            max-width: 1000px;
+            max-width: 1200px; /* Increased from 1000px to expand the site width */
             margin: 0 auto;
             padding: 4rem 5%;
         }
@@ -88,13 +88,13 @@
         }
 
         .layout-left {
-            flex: 1; 
+            flex: 1; /* Shared equally (50%) */
             position: sticky;
             top: 100px; /* Keeps image pinned relative to screen while scrolling */
         }
 
         .layout-right {
-            flex: 1.5; /* Gives slightly more horizontal room to text column */
+            flex: 1; /* Shared equally (50%) - allows image to grow much larger */
         }
 
         /* Responsive Feature Image Styles */
@@ -234,6 +234,7 @@
             </div>
 
         </div>
+        
         <section id="research-goals">
             <h2>Research Goals</h2>
             
