@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #D9D9D9; /* Light grey background */
+            background-color: #D9D9D9;
             padding: 1rem 5%;
             position: sticky;
             top: 0;
@@ -43,7 +43,7 @@
         }
 
         .nav-links li a {
-            color: #1a1a1a; /* Dark text so it is readable on grey */
+            color: #1a1a1a;
             text-decoration: none;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -74,40 +74,13 @@
 
         /* Main Layout constraints */
         .container {
-            max-width: 1200px; /* Increased from 1000px to expand the site width */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 4rem 5%;
         }
 
-        /* Side-by-Side Layout Wrapper */
-        .main-content-layout {
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-            margin-bottom: 4rem;
-        }
-
-        .layout-left {
-            flex: 1; /* Shared equally (50%) */
-            position: sticky;
-            top: 100px; /* Keeps image pinned relative to screen while scrolling */
-        }
-
-        .layout-right {
-            flex: 1; /* Shared equally (50%) - allows image to grow much larger */
-        }
-
-        /* Responsive Feature Image Styles */
-        .lab-feature-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: block;
-        }
-
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         section:last-child {
@@ -178,14 +151,6 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            /* Drops image above text on mobile devices */
-            .main-content-layout {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .layout-left, .layout-right {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -211,30 +176,20 @@
 
     <main class="container">
         
-        <div class="main-content-layout">
-            
-            <div class="layout-left">
-                <img src="image-set.jpg" alt="The Roche Lab Research Data" class="lab-feature-image">
-            </div>
-            
-            <div class="layout-right">
-                <section id="about">
-                    <h2>About Our Lab</h2>
-                    <p>Our lab studies the molecular mechanisms driving synaptic development and plasticity. We focus on synaptic proteins and their role in neurodegenerative diseases.</p>
-                </section>
+        <section id="about">
+            <h2>About Our Lab</h2>
+            <p>Our lab studies the molecular mechanisms driving synaptic development and plasticity. We focus on synaptic proteins and their role in neurodegenerative diseases.</p>
+        </section>
 
-                <section id="research-focus">
-                    <h2>Research Focus</h2>
-                    <p>How are synaptic proteins organized to build functional neural circuits, and how do changes in these proteins lead to progressive neuronal dysfunction?</p>
-                    
-                    <p>To answer these questions, The Roche Lab uses the <em>Drosophila</em> neuromuscular junction to dissect protein function in vivo. This synapse is genetically tractable and shares key features with glutamatergic synapses in the central nervous system, making it a powerful model for studying synaptic biology.</p>
-                    
-                    <p>We use an integrated approach combining forward and reverse genetics, immunohistochemistry, electrophysiology, and live and fixed imaging to study how synaptic proteins regulate synapse formation, function, and remodeling. Through this work, we aim to understand synaptic protein dysfunctions and how they contribute to neurodegenerative diseases.</p>
-                </section>
-            </div>
+        <section id="research-focus">
+            <h2>Research Focus</h2>
+            <p>How are synaptic proteins organized to build functional neural circuits, and how do changes in these proteins lead to progressive neuronal dysfunction?</p>
+            
+            <p>To answer these questions, The Roche Lab uses the <em>Drosophila</em> neuromuscular junction to dissect protein function in vivo. This synapse is genetically tractable and shares key features with glutamatergic synapses in the central nervous system, making it a powerful model for studying synaptic biology.</p>
+            
+            <p>We use an integrated approach combining forward and reverse genetics, immunohistochemistry, electrophysiology, and live and fixed imaging to study how synaptic proteins regulate synapse formation, function, and remodeling. Through this work, we aim to understand synaptic protein dysfunctions and how they contribute to neurodegenerative diseases.</p>
+        </section>
 
-        </div>
-        
         <section id="research-goals">
             <h2>Research Goals</h2>
             
