@@ -82,12 +82,12 @@
             line-height: 1.5;
         }
 
-        /* Main Content area */
+        /* Main Content Area */
         main {
             flex: 1; 
             display: flex;
             flex-direction: column;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
 
         /* White Spacer Block */
@@ -97,70 +97,66 @@
             width: 100%;
         }
 
-        /* News Hub Feed Layout */
+        /* News Display Section */
         .news-container {
-            max-width: 1100px;
+            max-width: 900px;
             width: 90%;
             margin: 0 auto 5rem auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
         }
 
-        .news-card {
-            background-color: #ffffff;
-            border-left: 5px solid #2b60de;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 2.5rem;
-            display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .news-content {
+        .news-article {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
+        }
+
+        /* Header Layout: Title Left, Date Right */
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-header h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .news-date {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #2b60de;
+            white-space: nowrap;
         }
 
-        .news-content h2 {
-            font-size: 1.8rem;
-            color: #1a1a1a;
-            font-weight: 700;
-        }
-
-        .news-content p {
-            font-size: 1.05rem;
-            color: #444444;
-            line-height: 1.6;
-        }
-
-        .news-image {
+        /* Large Featured Image Frame */
+        .news-image-wrap {
             width: 100%;
-            height: 100%;
-            min-height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 8px;
             overflow: hidden;
-            background-color: #f0f0f0;
-            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background-color: #f9f9f9;
         }
 
-        .news-image img {
+        .news-image-wrap img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Full Width Description Text नीचे */
+        .news-description {
+            font-size: 1.15rem;
+            color: #333333;
+            line-height: 1.7;
+            text-align: left;
+            margin-top: 0.5rem;
         }
 
         /* Footer */
@@ -172,7 +168,7 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Responsiveness */
+        /* Mobile Responsiveness Rules */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -181,7 +177,7 @@
             }
 
             .nav-links {
-                display: none; /* FIXED: Hides desktop links on mobile so they don't overlap */
+                display: none; 
             }
 
             .hero h1 {
@@ -193,14 +189,18 @@
                 font-size: 1.1rem;
             }
 
-            .news-card {
-                grid-template-columns: 1fr; /* Stacks image below text on mobile */
-                gap: 1.5rem;
-                padding: 1.5rem;
+            .news-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
             }
 
-            .news-image {
-                min-height: 180px;
+            .news-header h2 {
+                font-size: 2rem;
+            }
+            
+            .news-description {
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -231,16 +231,22 @@
         <div class="white-spacer"></div>
 
         <section class="news-container">
-            <div class="news-card">
-                <div class="news-content">
-                    <span class="news-date">May 2026</span>
+            <article class="news-article">
+                
+                <div class="news-header">
                     <h2>Senior Thesis Presentation</h2>
-                    <p>Senior thesis students shared the results of their year-long research projects through formal presentations to faculty, peers, and guests. Their work highlights the breadth of research being conducted in the lab and the commitment of our students to advancing scientific understanding.</p>
+                    <span class="news-date">May 2026</span>
                 </div>
-                <div class="news-image">
+
+                <div class="news-image-wrap">
                     <img src="thesis.svg" alt="Senior thesis students doing their presentation">
                 </div>
-            </div>
+
+                <p class="news-description">
+                    Senior thesis students shared the results of their year-long research projects through formal presentations to faculty, peers, and guests. Their work highlights the breadth of research being conducted in the lab and the commitment of our students to advancing scientific understanding.
+                </p>
+
+            </article>
         </section>
     </main>
 
