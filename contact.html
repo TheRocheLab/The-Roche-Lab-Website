@@ -97,14 +97,14 @@
             width: 100%;
         }
 
-        /* Contact Details Grid Layout */
+        /* Contact Details Grid Layout - Image brought closer to text */
         .contact-container {
             max-width: 1100px;
             width: 90%;
             margin: 0 auto 5rem auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr; /* Gives the text section slightly more room */
+            gap: 2rem; /* Reduced from 4rem to pull the image closer */
             align-items: flex-start;
         }
 
@@ -127,7 +127,7 @@
             color: #1a1a1a;
             font-weight: 500;
             line-height: 1.5;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .email-info {
@@ -188,74 +188,3 @@
             .hero h1 {
                 font-size: 2.8rem;
                 margin-bottom: 1.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr; /* Stacks image below text on mobile */
-                gap: 2.5rem;
-            }
-
-            .address-text {
-                font-size: 1.15rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <a href="index.html" class="logo">
-            <img src="logo.svg" alt="The Roche Lab Logo" style="height: 45px; width: auto;">
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="publication.html">Publications</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1>Contact Us</h1>
-        <p>Get in touch with The Roche Lab at Amherst College</p>
-    </header>
-
-    <main>
-        <div class="white-spacer"></div>
-
-        <section class="contact-container">
-            
-            <div class="contact-info">
-                <span class="location-title">Our Location</span>
-                <p class="address-text">
-                    The Roche Lab<br>
-                   Science Center, Room B003<br>
-                    Amherst College<br>
-                    Amherst, MA 01002
-                </p>
-                
-                <p class="email-info">
-                    Email: <a href="mailto:jroche@amherst.edu">jroche@amherst.edu</a>
-                </p>
-            </div>
-
-            <div class="contact-image-wrap">
-                <img src="centre.jpg" alt="Amherst College Science Center">
-            </div>
-
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 The Roche Lab. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
