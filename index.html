@@ -56,21 +56,36 @@
             color: #2b60de;
         }
 
-        /* Hero Section (Blue Banner) */
-        .hero {
-            background-color: #2b60de; /* Royal blue */
-            color: white;
-            padding: 6rem 5%;
-            text-align: center;
-        }
+       /* Hero Section (Blue Banner) */
+.hero {
+    /* Your existing layout properties */
+    color: white;
+    padding: 6rem 5%;
+    text-align: center;
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
+    /* --- ADDED PROPERTIES --- */
+    /* Blue overlay matching your #2b60de royal blue + the banner.jpeg underneath */
+    background: linear-gradient(rgba(43, 96, 222, 0.8), rgba(43, 96, 222, 0.8)), url('banner.jpeg');
+    
+    /* Keeps the image height contained and repeats it horizontally */
+    background-size: auto 100%; 
+    background-repeat: repeat-x;
+    
+    /* Triggers the movement */
+    animation: scrollBackground 40s linear infinite; 
+}
+
+/* The Animation Keyframes */
+@keyframes scrollBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        /* Adjust the -2000px based on how wide banner.jpeg actually is. 
+           If it jumps when looping, tweak this number until it is seamless. */
+        background-position: -2000px 0; 
+    }
+}
 
         /* Main Layout constraints */
         .container {
