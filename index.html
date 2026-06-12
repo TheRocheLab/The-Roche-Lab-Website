@@ -63,7 +63,7 @@
     text-align: center;
 
     /* --- FONT ADJUSTMENTS --- */
-    color: #d9d9d9; /* Dark gray/black matching your site's theme */
+    color: #1A1A1A; /* Dark gray/black matching your site's theme */
     font-size: 1.25rem; /* Makes the base text in this section larger */
 
     /* --- BACKGROUND ADJUSTMENTS --- */
@@ -80,9 +80,14 @@
 
 /* Optional: If you want the main title inside the hero to be extra large */
 .hero h1 {
-    font-size: 4rem; /* Increase this number to make it bigger (e.g., 5rem, 6rem) */
-    font-weight: bold; /* Optional: makes the text thicker */
-    margin-bottom: 1rem; /* Keeps some space between the title and whatever is below it */
+   /* Enlarges the main title in the hero section and makes it translucent black */
+.hero h1 {
+    font-size: 5rem; 
+    font-weight: bold; 
+    margin-bottom: 1rem; 
+    
+    /* --- ADD THIS LINE --- */
+    color: rgba(0, 0, 0, 0.5); /* 0 is black, 0.5 is 60% translucent */
 }
 
 /* The Animation Keyframes */
