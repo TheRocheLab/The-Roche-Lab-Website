@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #ffffff;
+            background-color: #2b60de;
            padding: 10px 5%; /* Tight, fixed vertical padding stops the bar from getting oversized */
             position: sticky;
             top: 0;
@@ -56,7 +56,7 @@
             color: #2b60de;
         }
 
-    /* Hero Section */
+ /* Hero Section */
 .hero {
     /* Layout properties */
     padding: 6rem 5%;
@@ -67,14 +67,14 @@
     font-size: 1.25rem; /* Makes the base text in this section larger */
 
     /* --- BACKGROUND ADJUSTMENTS --- */
-    /* Light white transparent overlay + the banner.jpeg underneath */
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('banner.jpeg');
+    /* Only the banner.jpeg underneath, no overlay */
+    background: url('banner.jpeg');
     
     /* Keeps the image height contained and repeats it horizontally */
     background-size: auto 100%; 
     background-repeat: repeat-x;
     
-    /* Triggers the movement - increased from 40s to 80s to slow it down */
+    /* Triggers the movement - 80s scroll speed */
     animation: scrollBackground 80s linear infinite; 
 }
 
@@ -93,7 +93,6 @@
         background-position: -2000px 0; 
     }
 }
-
         /* Main Layout constraints */
         .container {
             max-width: 1000px;
