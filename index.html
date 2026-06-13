@@ -56,26 +56,23 @@
             color: #2b60de;
         }
 
- /* Hero Section */
+/* Hero Section */
 .hero {
     /* Layout properties */
     padding: 6rem 5%;
     text-align: center;
 
     /* --- FONT ADJUSTMENTS --- */
-    color: #CAF5F7; /* Dark gray/black matching your site's theme */
-    font-size: 1.25rem; /* Makes the base text in this section larger */
+    color: #CAF5F7; 
+    font-size: 1.25rem; 
 
     /* --- BACKGROUND ADJUSTMENTS --- */
-    /* Only the banner.jpeg underneath, no overlay */
-    background: url('RIMAGE.JPG');
+    background: url('HMAGE.JPG');
+    background-size: cover; /* Forces the image to cover the entire container without distorting */
+    background-position: center; /* Keeps the focal point of the image in the middle */
+    background-repeat: no-repeat; /* Prevents the image from duplicating and showing edges */
     
-    /* Keeps the image height contained and repeats it horizontally */
-    background-size: auto 100%; 
-    background-repeat: repeat-x;
-    
-    /* Triggers the movement - 80s scroll speed */
-    animation: scrollBackground 80s linear infinite; 
+    /* Notice: the 'animation' property has been removed so it stays perfectly still */
 }
 
    /* Enlarges the main title in the hero section and makes it translucent black */
