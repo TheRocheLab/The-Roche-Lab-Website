@@ -105,41 +105,49 @@
             letter-spacing: 1px;
         }
 
-        /* Team Grid */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem 2rem;
-            margin-bottom: 4rem;
-        }
+       /* Team Layout Containers */
+.team-section {
+    max-width: 1000px;
+    margin: 0 auto 3rem auto; /* Centers the section and adds bottom spacing */
+    padding: 0 20px;
+}
 
-        .team-member {
-            text-align: center;
-        }
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows members to wrap to the next line if the screen is small */
+    justify-content: center; /* THIS is the magic line that creates the pyramid shape! */
+    gap: 2rem; /* The space between each person */
+}
 
-        .image-placeholder {
-            background-color: #e0e0e0;
-            width: 100%;
-            aspect-ratio: 4/5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
+/* Individual Member Card Styling */
+.member-card {
+    width: 250px; /* Adjust this to make the pictures wider or narrower */
+    text-align: center;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
 
-        .team-member h3 {
-            font-size: 1.3rem;
-            color: #1a1a1a;
-            margin-bottom: 0.3rem;
-        }
+.member-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Keeps images perfectly square/round without squishing */
+    border-radius: 50%; /* Makes the images circular! Change to 8px for rounded squares */
+    margin-bottom: 1rem;
+}
 
-        .team-member p {
-            font-size: 1rem;
-            color: #555;
-        }
+.member-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
 
+.member-title {
+    font-size: 0.9rem;
+    color: #0056b3; /* A nice lab blue */
+    font-weight: bold;
+}
         /* Footer */
         footer {
             background-color: #1a1a1a;
@@ -198,46 +206,51 @@
         
         <h2 class="section-title">CURRENT MEMBERS</h2>
 
-      <div class="team-grid">
+      <section class="team-section">
+        <div class="team-grid">
+            <div class="member-card">
+                <img src="logo.png" alt="John Roche, Ph.D.">
+                <h3 class="member-name">John Roche, Ph.D.</h3>
+                <p class="member-title">Professor of Neuroscience and Biology</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="team-grid">
             
-            <div class="team-member">
-                <img src="logo.png" alt="John Roche, Ph.D." class="image-placeholder" style="object-fit: contain; padding: 1rem;">
-                <h3>John Roche, Ph.D.</h3>
-                <p>Professor of Neuroscience and Biology</p>
+            <div class="member-card">
+                <img src="eunchae.jpg" alt="Eunchae Kang">
+                <h3 class="member-name">Eunchae Kang</h3>
+                <p class="member-title">Thesis Student '26</p>
             </div>
 
-          <div class="team-member">
-                <img src="eunchae.jpg" alt="Eunchae Kang" class="image-placeholder">
-                <h3>Eunchae Kang</h3>
-                <p>Thesis Student ‘26</p>
+            <div class="member-card">
+                <img src="logo.png" alt="Kellen Garris">
+                <h3 class="member-name">Kellen Garris</h3>
+                <p class="member-title">Thesis Student '26</p>
             </div>
 
-            <div class="team-member">
-                <img src="logo.png" alt="Kellen Garris" class="image-placeholder" style="object-fit: contain; padding: 1rem;">
-                <h3>Kellen Garris</h3>
-                <p>Thesis Student ‘26</p>
+            <div class="member-card">
+                <img src="logo.png" alt="Tinuke Alarpon">
+                <h3 class="member-name">Tinuke Alarpon</h3>
+                <p class="member-title">Thesis Student '26</p>
             </div>
 
-            <div class="team-member">
-                <img src="logo.png" alt="Tinuke Alarpon" class="image-placeholder" style="object-fit: contain; padding: 1rem;">
-                <h3>Tinuke Alarpon</h3>
-                <p>Thesis Student ‘26</p>
+            <div class="member-card">
+                <img src="david.jpg" alt="David Chege">
+                <h3 class="member-name">David Chege '27</h3>
+                <p class="member-title">Lab Member</p>
             </div>
-
-            <div class="team-member">
-                <img src="david.jpg" alt="David Chege" class="image-placeholder">
-                <h3>David Chege ‘27</h3>
-                <p>Lab Member</p>
-            </div>
-
-            <div class="team-member">
-                <img src="fr.png" alt="William Ji" class="image-placeholder" style="object-fit: contain; padding: 1rem;">
-                <h3>William Ji ‘27</h3>
-                <p>Lab Member</p>
+            
+            <div class="member-card">
+                <img src="fr.png" alt="William Ji">
+                <h3 class="member-name">William Ji '27</h3>
+                <p class="member-title">Lab Member</p>
             </div>
 
         </div>
-
+    </section>
         <h2 class="section-title" style="margin-top: 5rem;">LAB ALUMNI</h2>
         <p style="text-align: center; color: #555;">Details on lab alumni coming soon.</p>
 
