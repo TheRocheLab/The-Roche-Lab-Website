@@ -58,8 +58,8 @@
 
 /* Hero Section */
 .hero {
-    /* Layout properties */
-    padding: 6rem 5%;
+    /* Layout properties - INCREASED PADDING TO MAKE BANNER TALLER */
+    padding: 12rem 5%; /* Changed from 6rem to 12rem */
     text-align: center;
 
     /* --- FONT ADJUSTMENTS --- */
@@ -67,12 +67,10 @@
     font-size: 1.25rem; 
 
     /* --- BACKGROUND ADJUSTMENTS --- */
-    background: url('HMAGE.JPG');
-    background-size: cover; /* Forces the image to cover the entire container without distorting */
-    background-position: center; /* Keeps the focal point of the image in the middle */
-    background-repeat: no-repeat; /* Prevents the image from duplicating and showing edges */
-    
-    /* Notice: the 'animation' property has been removed so it stays perfectly still */
+    background: url('RIMAGE.JPG');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
    /* Enlarges the main title in the hero section and makes it translucent black */
@@ -86,15 +84,7 @@
     color: rgba(43, 96, 222 0.8); /* 0 is black, 0.5 is 20% translucent */
 }
 
-/* The Animation Keyframes */
-@keyframes scrollBackground {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -2000px 0; 
-    }
-}
+
         /* Main Layout constraints */
         .container {
             max-width: 1000px;
