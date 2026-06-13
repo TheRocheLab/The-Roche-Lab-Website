@@ -58,8 +58,8 @@
 
 /* Hero Section */
 .hero {
-    /* Layout properties - INCREASED PADDING TO MAKE BANNER TALLER */
-    padding: 6rem 5%; /* Changed from 6rem to 12rem */
+    /* Layout properties - You can adjust the 10rem to make the banner taller/shorter */
+    padding: 10rem 5%; 
     text-align: center;
 
     /* --- FONT ADJUSTMENTS --- */
@@ -68,10 +68,30 @@
 
     /* --- BACKGROUND ADJUSTMENTS --- */
     background: url('HMAGE.JPG');
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    
+    /* 'auto 100%' forces the full height of the image to be visible! */
+    background-size: auto 100%; 
+    
+    /* Tiles the image left-to-right so it has space to scroll */
+    background-repeat: repeat-x; 
+    background-position: 0 center;
+    
+    /* Re-adds the continuous scrolling animation */
+    animation: scrollBackground 30s linear infinite; 
 }
 
+/* Keyframes for the scrolling effect */
+@keyframes scrollBackground {
+    from { 
+        background-position: 0 center; 
+    }
+    to { 
+        /* The -2000px value determines how far it slides. 
+           If the scroll suddenly 'jumps', you can increase or decrease this number 
+           to better match the actual width of your HMAGE.JPG file! */
+        background-position: -2000px center; 
+    }
+}
    /* Enlarges the main title in the hero section and makes it translucent black */
 .hero h1 {
     font-size: 5rem; 
