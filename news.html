@@ -67,17 +67,31 @@
             color: #2b60de;
         }
 
-   /* Hero Section (Container) */
+    /* Hero Section */
 .hero {
-    position: relative;
-    color: white;
-    padding: 6rem 5% 8rem 5%;
-    text-align: left;
-    overflow: hidden; /* Keeps the zooming image contained */
-    /* Note: We removed the background-image properties from here */
+    position: relative; 
+    z-index: 1;         
+    
+    /* 1. Reduced padding to make the banner shorter overall */
+    padding: 8rem 5%; 
+    
+    text-align: center;
+    color: white; 
+
+    /* --- BACKGROUND ADJUSTMENTS --- */
+    background: url('news.png');
+    
+    /* 2. 'cover' allows the image to crop rather than just shrink */
+    background-size:  auto 100%; 
+    background-repeat: repeat-x; 
+    
+    /* 3. Anchors the image to the 'top', forcing the 'bottom' to be the part that gets chopped off */
+    background-position: 0 top; 
+    
+    animation: scrollBackground 80s linear infinite; 
 }
 
-/* 1. The Animated Background Image Layer */
+/* The Translucent Black Overlay */
 .hero::before {
     content: "";
     position: absolute;
@@ -85,57 +99,35 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('news.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; /* 'cover' ensures the image fills the space nicely */
-    z-index: 0;
-    /* Hardware-accelerated animation */
-    animation: zoomEffect 80s infinite alternate ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
 }
 
-/* 2. The Translucent Black Overlay Layer */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity here */
-    z-index: 1;
-}
-
-/* 3. Ensure Text Stays Above the Image and Overlay */
-.hero h1, .hero p {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.25rem;
-    max-width: 800px;
-    font-weight: 400;
-    line-height: 1.5;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Background Animation Keyframes */
-@keyframes zoomEffect {
-    0% {
-        transform: scale(1); /* Normal size */
+/* Keyframes for the scrolling effect */
+@keyframes scrollBackground {
+    from { 
+        /* 4. Updated to 'top' so the animation matches the new position */
+        background-position: 0 top; 
     }
-    100% {
-        transform: scale(1.15); /* Zooms in 15% */
+    to { 
+        /* 4. Updated to 'top' here as well */
+        background-position: -2000px top; 
     }
 }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
         /* Main Content Area */
         main {
             flex: 1; 
