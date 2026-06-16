@@ -67,31 +67,17 @@
             color: #2b60de;
         }
 
-    /* Hero Section */
+   /* Hero Section */
 .hero {
-    position: relative; 
-    z-index: 1;         
-    
-    /* 1. Reduced padding to make the banner shorter overall */
-    padding: 8rem 5%; 
-    
+    position: relative;
+    z-index: 1;
+    padding: 8rem 5%;
     text-align: center;
-    color: white; 
-
-    /* --- BACKGROUND ADJUSTMENTS --- */
-    background: url('news.png');
-    
-    /* 2. 'cover' allows the image to crop rather than just shrink */
-    background-size:  auto 100%; 
-    background-repeat: repeat-x; 
-    
-    /* 3. Anchors the image to the 'top', forcing the 'bottom' to be the part that gets chopped off */
-    background-position: 0 top; 
-    
-    animation: scrollBackground 80s linear infinite; 
+    color: white;
+    overflow: hidden; /* Important: keeps the zooming image from spilling out */
 }
 
-/* The Translucent Black Overlay */
+/* Put the background on a pseudo-element for smooth hardware-accelerated scaling */
 .hero::before {
     content: "";
     position: absolute;
@@ -99,19 +85,33 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: -1; 
+    background: url('news.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+    animation: zoomBackground 15s ease-in-out infinite alternate;
 }
 
-/* Keyframes for the scrolling effect */
-@keyframes scrollBackground {
-    from { 
-        /* 4. Updated to 'top' so the animation matches the new position */
-        background-position: 0 top; 
+/* Translucent Black Overlay */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Keyframes for Smooth Zoom */
+@keyframes zoomBackground {
+    0% {
+        transform: scale(1);
     }
-    to { 
-        /* 4. Updated to 'top' here as well */
-        background-position: -2000px top; 
+    100% {
+        transform: scale(1.15); /* Zooms in 15% */
     }
 }
         .hero h1 {
