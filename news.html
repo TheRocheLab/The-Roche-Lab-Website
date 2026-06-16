@@ -67,21 +67,17 @@
             color: #2b60de;
         }
 
-       /* Hero Section (Image Banner with Animation) */
+   /* Hero Section (Container) */
 .hero {
     position: relative;
     color: white;
-    padding: 6rem 5% 8rem 5%; /* Slightly increased padding for a better image view */
+    padding: 6rem 5% 8rem 5%;
     text-align: left;
-    background-image: url('news.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%; /* Starting size for the animation */
-    overflow: hidden;
-    animation: backgroundZoom 85s infinite alternate ease-in-out;
+    overflow: hidden; /* Keeps the zooming image contained */
+    /* Note: We removed the background-image properties from here */
 }
 
-/* Translucent Black Overlay */
+/* 1. The Animated Background Image Layer */
 .hero::before {
     content: "";
     position: absolute;
@@ -89,11 +85,28 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* 0.6 is the opacity; adjust 0.1 to 0.9 as needed */
+    background-image: url('news.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* 'cover' ensures the image fills the space nicely */
+    z-index: 0;
+    /* Hardware-accelerated animation */
+    animation: zoomEffect 80s infinite alternate ease-in-out;
+}
+
+/* 2. The Translucent Black Overlay Layer */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity here */
     z-index: 1;
 }
 
-/* Ensure Text Stays Above the Overlay */
+/* 3. Ensure Text Stays Above the Image and Overlay */
 .hero h1, .hero p {
     position: relative;
     z-index: 2;
@@ -103,7 +116,7 @@
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Extra readability boost */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
@@ -115,28 +128,14 @@
 }
 
 /* Background Animation Keyframes */
-@keyframes backgroundZoom {
+@keyframes zoomEffect {
     0% {
-        background-size: 100%;
+        transform: scale(1); /* Normal size */
     }
     100% {
-        background-size: 115%; /* Zooms in by 15% */
+        transform: scale(1.15); /* Zooms in 15% */
     }
 }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-
         /* Main Content Area */
         main {
             flex: 1; 
